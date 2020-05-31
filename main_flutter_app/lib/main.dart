@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mainflutterapp/pages/CardMaterial.dart';
+import 'package:mainflutterapp/pages/CustomScrollViewSliver.dart';
 import 'package:mainflutterapp/pages/DrawerClass.dart';
 import 'package:mainflutterapp/pages/ListView_Titel_Builder_divider.dart';
 import 'package:mainflutterapp/pages/Overlapping.dart';
@@ -62,6 +63,13 @@ class _DashboardState extends State<Dashboard> {
             child: Text('CardMaterial'),
             onPressed: () {
               Route route=MaterialPageRoute(builder: (context)=> CardMaterial());
+              Navigator.push(context, route);
+            },
+          ),
+          FlatButton(
+            child: Text('CustomScrollViewSliver'),
+            onPressed: () {
+              Route route=MaterialPageRoute(builder: (context)=> CustomScrollViewSliver());
               Navigator.push(context, route);
             },
           ),
