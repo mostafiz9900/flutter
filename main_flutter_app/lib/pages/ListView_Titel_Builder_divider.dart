@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mainflutterapp/pages/PassDataBetweenPage.dart';
 
 class ListView_Titel_Builder_divider extends StatelessWidget {
   String _longText =
       "A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.";
+  var msg;
   List _people = [
     {"name": "Mostafizur Rahman", "email": "mostafiz@gmail.com"},
     {"name": "Sofiqul", "email": "sofiqul@gmail.com"},
@@ -24,6 +26,7 @@ class ListView_Titel_Builder_divider extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('ListView_Titel_Builder_divider'),
+
         ),
         body: ListView.builder(
           itemCount: _people.length,
@@ -36,6 +39,12 @@ class ListView_Titel_Builder_divider extends StatelessWidget {
                   ),
                   title: Text(_people[index]["name"]),
                   subtitle: Text(_people[index]["email"]),
+                  onTap: (){
+//                    print(_people[index]);
+//                    var msg='Hello Deshboard';
+                    Route route=MaterialPageRoute(builder: (context)=> PassDataBetweenPage(_people[index]));
+                    Navigator.push(context, route);
+                  },
                 )
               ],
             );
