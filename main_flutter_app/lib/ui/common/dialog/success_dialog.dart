@@ -33,6 +33,7 @@ class _NewDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+
             Container(
                 height: 60,
                 width: double.infinity,
@@ -44,6 +45,8 @@ class _NewDialog extends StatelessWidget {
                     color: PsColors.mainColor),
                 child: Row(
                   children: <Widget>[
+
+
                     const SizedBox(width: PsDimens.space4),
                     Icon(
                       Icons.check_circle,
@@ -97,3 +100,6 @@ class _NewDialog extends StatelessWidget {
     );
   }
 }
+
+
+

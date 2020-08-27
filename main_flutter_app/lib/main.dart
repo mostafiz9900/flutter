@@ -30,9 +30,15 @@ import 'package:mainflutterapp/pages/swipe_images.dart';
 import 'package:mainflutterapp/pages/url_launcher_popupmenu.dart';
 import 'package:mainflutterapp/ui/custom_widget.dart';
 import 'package:mainflutterapp/ui/fancy_button_container.dart';
+import 'package:mainflutterapp/ui/provider_view/provider_view.dart';
+import 'package:mainflutterapp/ui/refresh_indicator_list.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      primaryColor: Colors.indigo,
+    ),
     home: Dashboard(),
   ));
 }
@@ -45,13 +51,15 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle=Theme.of(context).textTheme.display1;
     return WillPopScope(
-      onWillPop: () {
-        _showExitPopup();
-      },
+      onWillPop:
+        _showExitPopup,
       child: Scaffold(
           appBar: AppBar(
             title: Text('Dashboard'),
+            centerTitle: true,
+            backgroundColor: Colors.indigo.shade200,
           ),
           body: ListView(
             dragStartBehavior: DragStartBehavior.start,
@@ -60,7 +68,8 @@ class _DashboardState extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   FlatButton(
-                    child: Text('Page1'),
+                    color: Theme.of(context).accentColor,
+                    child: Text('Page1',style:textStyle ,),
                     onPressed: () {
                       Route route =
                           MaterialPageRoute(builder: (context) => Page1());
@@ -78,6 +87,7 @@ class _DashboardState extends State<Dashboard> {
                   FlatButton(
                     child: Text('ListView_Titel_Builder_divider'),
                     onPressed: () {
+                      debugPrint('list title');
                       Route route = MaterialPageRoute(
                           builder: (context) =>
                               ListView_Titel_Builder_divider());
@@ -284,6 +294,22 @@ class _DashboardState extends State<Dashboard> {
                       Navigator.push(context, route);
                     },
                   ),
+                  FlatButton(
+                    child: Text('Provider'),
+                    onPressed: () {
+                      Route route = MaterialPageRoute(
+                          builder: (context) => ProviderView());
+                      Navigator.push(context, route);
+                    },
+                  ),
+                  FlatButton(
+                    child: Text('refresh indicator'),
+                    onPressed: () {
+                      Route route = MaterialPageRoute(
+                          builder: (context) => RefreshIndicatorListView());
+                      Navigator.push(context, route);
+                    },
+                  ),
                 ],
               ),
             ],
@@ -291,7 +317,7 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  _showExitPopup() {
+ Future<bool> _showExitPopup() {
     return showDialog(
         context: context,
         builder: (context) {
