@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -18,6 +19,7 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   String result = "Hey there !";
+  String _scanBarcode='';
 
   Future _scanQR() async {
     try {
@@ -45,6 +47,18 @@ class HomePageState extends State<HomePage> {
       });
     }
   }
+  Future scanBarcodeNormal() async {
+    String barcodeScanRes;
+
+    barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+        "#ff6666", "Cancel", true, ScanMode.QR);
+    print(barcodeScanRes);
+
+    setState(() {
+      _scanBarcode = barcodeScanRes;
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +66,25 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("QR Scanner"),
       ),
-      body: Center(
-        child: Text(
-          result,
-          style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
-        ),
+      body: Column(
+        children: <Widget>[
+          Center(
+            child: Text(
+              result,
+              style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Center(
+            child: Text(
+              _scanBarcode,
+              style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          RaisedButton(
+            child: Text('flutter_barcode_scanner '),
+            onPressed: scanBarcodeNormal,
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.camera_alt),
