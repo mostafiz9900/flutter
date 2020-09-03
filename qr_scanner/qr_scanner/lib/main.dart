@@ -80,8 +80,9 @@ class HomePageState extends State<HomePage> {
               style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
             ),
           ),
-          RaisedButton(
-            child: Text('flutter_barcode_scanner '),
+          RaisedButton.icon(
+            icon: Icon(Icons.camera_alt),
+            label: Text('flutter_barcode_scanner '),
             onPressed: scanBarcodeNormal,
           ),
         ],
