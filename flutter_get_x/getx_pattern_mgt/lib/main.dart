@@ -11,13 +11,16 @@ void main() {
       GetMaterialApp(
         debugShowCheckedModeBanner: false,
         // initialBinding: HomeBinding(),
-        initialRoute: Routes.HOME,
+        initialRoute: "/",
+        getPages: AppPages.pages,
         theme: appThemeData,
         defaultTransition: Transition.fade,
-        getPages: AppPages.pages,
+
         home: HomePage(),
         locale: Locale('pt', 'BR'),
         translationsKeys: AppTranslation.translations,
+
+
       )
   );
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "897232594940",
+    "firebase_url": "https://login-getx-firestore-45865.firebaseio.com",
+    "project_id": "login-getx-firestore-45865",
+    "storage_bucket": "login-getx-firestore-45865.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897232594940:android:78991dad339b03e9bf3479",
+        "android_client_info": {
+          "package_name": "com.beskilled.logingetxfirestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897232594940-e1g5n5lk7sbuao6ugm249s27goa1jd2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgvuny2ZJdhFJ6pl_4yC6fUCbpQzLv9yY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897232594940-e1g5n5lk7sbuao6ugm249s27goa1jd2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
