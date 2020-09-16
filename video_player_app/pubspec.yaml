@@ -1,4 +1,4 @@
-name: getx_pattern_mgt
+name: video_player_app
 description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
@@ -28,10 +28,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
-  http: ^0.12.2
-  get: ^3.10.2
-  slimy_card: ^1.0.4
+  getwidget: ^1.1.3
   youtube_player_flutter: ^7.0.0+7
+  get: ^3.10.2
+  sqflite: ^1.3.1+1
+  fl_chart: ^0.11.1
+  youtube_player_iframe: ^1.1.0
+  flutter_widget_from_html:
+  webview_flutter: ^0.3.22+1
+
 
 dev_dependencies:
   flutter_test:
