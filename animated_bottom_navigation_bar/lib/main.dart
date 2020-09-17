@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     );
   }
-  
+
 }
 class ImagesView extends StatelessWidget {
   ImagesView({Key key}) : super(key: key);
@@ -123,6 +123,7 @@ class ImagesView extends StatelessWidget {
           children: <Widget>[
             Container(color: Colors.red,),
             Container(color: Colors.grey,),
+            Container(color: Colors.pink,),
             Container(color: Colors.pink,),
             Container(color: Colors.pink,),
           ],
