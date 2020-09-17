@@ -45,13 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
 String vedioUrl="https://www.youtube.com/watch?v=fUv9gO8t8b4";
 String vedioUrl2="https://www.youtube.com/embed/BE9ATY2Ygas";
+String vedioUrl3="https://www.youtube.com/embed/v4NxcepZFbw?rel=0";
 YoutubePlayerController _controller ;
 
   @override
   void initState() {
     super.initState();
 _controller=YoutubePlayerController(
-  initialVideoId: YoutubePlayer.convertUrlToId(vedioUrl2),
+  initialVideoId: YoutubePlayer.convertUrlToId(vedioUrl3),
   flags: YoutubePlayerFlags(
     autoPlay: false,
     mute: true
@@ -81,11 +82,7 @@ _controller=YoutubePlayerController(
                 controller: _controller,
               ),
               SizedBox(height: 20,),
-              Container(
-                  child: WebView(
-                    initialUrl: Uri.dataFromString('<html><body><iframe src="https://www.youtube.com/embed/abc"></iframe></body></html>', mimeType: 'text/html').toString(),
-                    javascriptMode: JavascriptMode.unrestricted,
-                  )),
+
             ],
           ),
         ),
