@@ -1,9 +1,59 @@
+import 'dart:ui';
+
+import 'package:animated_bottom_navigation_bar/json_parsing/json_parseing_map.dart';
+import 'package:animated_bottom_navigation_bar/json_parsing/json_parsing.dart';
+import 'package:animated_bottom_navigation_bar/models/student.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 void main() {
   runApp(MyApp());
+}
+
+final ThemeData _appTheme=appThemeData();
+
+ThemeData appThemeData() {
+ final ThemeData bess=ThemeData.dark();
+  return bess.copyWith(
+    brightness: Brightness.dark,
+    accentColor: Colors.amber,
+    primaryColor:Colors.green,
+    scaffoldBackgroundColor: Colors.red,
+    backgroundColor: Colors.blueGrey,
+  textTheme: _appTextTheme(bess.textTheme),
+  //     textTheme: TextTheme(
+  //     bodyText1:  TextStyle(
+  //       fontWeight: FontWeight.bold,
+  //       fontSize: 30
+  //     )
+  // )
+  );
+
+}
+TextTheme _appTextTheme(TextTheme baseText){
+  return baseText.copyWith(
+   /* headline1: baseText.headline1.copyWith(
+       fontSize: 55,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold
+    ),
+    caption: baseText.caption.copyWith(
+        fontSize: 12,fontStyle: FontStyle.normal,fontWeight: FontWeight.normal
+    ),
+    body1: baseText.body1.copyWith(
+        fontSize: 44,fontStyle: FontStyle.normal,fontWeight: FontWeight.normal
+    ),*/
+    button: baseText.button.copyWith(
+      fontWeight: FontWeight.w900,
+      letterSpacing: 1,
+      fontSize: 30,
+      backgroundColor: Colors.brown,
+      fontFamily: "Courgette"
+    )
+  ).apply(
+    fontFamily: 'Courgette'
+  //      alll effect bassetess class .apply user  
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,10 +62,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: _appTheme,
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -59,9 +106,37 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           children: <Widget>[
             ImagesView(),
-            Container(color: Colors.red,),
-            Container(color: Colors.green,),
-            Container(color: Colors.blue,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                 height: 50,
+                width: MediaQuery.of(context).size.width /2,
+                decoration: BoxDecoration(
+                  color: Colors.green[400],
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
+                child: RaisedButton(
+                  onPressed: (){},
+                  child: Text('Button one',style: TextStyle(color: Colors.red,fontWeight: FontWeight.w900),),
+                ),
+                ),
+                Container(
+                 height: 50,
+                width: MediaQuery.of(context).size.width /2,
+                decoration: BoxDecoration(
+                  color: Colors.blueAccent[400],
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
+                child: RaisedButton(
+                  onPressed: (){},
+                  child: Text('Button one',style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.w900,fontFamily: "Courgette"),),
+                ),
+                ),
+              ],
+            ),
+            JsonParsing(),
+            JsonParsingMap(),
           ],
         ),
       ),
@@ -77,15 +152,15 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.home)
           ),
           BottomNavyBarItem(
-              title: Text('Item One'),
+              title: Text('Item Two'),
               icon: Icon(Icons.apps)
           ),
           BottomNavyBarItem(
-              title: Text('Item One'),
+              title: Text('Item Three'),
               icon: Icon(Icons.chat_bubble)
           ),
           BottomNavyBarItem(
-              title: Text('Item One'),
+              title: Text('Item Fore'),
               icon: Icon(Icons.settings)
           ),
         ],
@@ -96,8 +171,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
 }
 class ImagesView extends StatelessWidget {
-  ImagesView({Key key}) : super(key: key);
+  final List<Student> student=Student.getStudent();
 
+
+
+
+
+
+List bodyList=[
+  'Mostafiz',
+  'Mostafiz',
+  'Mostafiz',
+  'Mostafiz',
+  'Mostafiz',
+  'Mostafiz',
+
+];
   @override
   Widget build(BuildContext context) {
       return Container(
@@ -116,17 +205,17 @@ class ImagesView extends StatelessWidget {
             StaggeredTile.count(2,2),
             StaggeredTile.count(2,2),
 
+
             //  StaggeredTile.count(3, 2),
 
             // StaggeredTile.count(1, 1),
           ],
-          children: <Widget>[
-            Container(color: Colors.red,),
-            Container(color: Colors.grey,),
-            Container(color: Colors.pink,),
-            Container(color: Colors.pink,),
-            Container(color: Colors.pink,),
-          ],
+          children: student.map((Student stu) => Card(
+            child: Container(
+              color: Colors.lightBlue[400],
+                child: Text('${stu.name}',style: TextStyle(fontFamily: 'Courgette',),)
+            ),
+          )).toList()
         ),
       );
 
