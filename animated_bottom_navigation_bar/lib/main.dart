@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:animated_bottom_navigation_bar/json_parsing/json_parseing_map.dart';
 import 'package:animated_bottom_navigation_bar/json_parsing/json_parsing.dart';
 import 'package:animated_bottom_navigation_bar/models/student.dart';
+import 'package:animated_bottom_navigation_bar/ui/weather_forecast.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ ThemeData appThemeData() {
     brightness: Brightness.dark,
     accentColor: Colors.amber,
     primaryColor:Colors.green,
-    scaffoldBackgroundColor: Colors.red,
+    scaffoldBackgroundColor: Colors.blueGrey[500],
     backgroundColor: Colors.blueGrey,
   textTheme: _appTextTheme(bess.textTheme),
   //     textTheme: TextTheme(
@@ -47,7 +48,7 @@ TextTheme _appTextTheme(TextTheme baseText){
       fontWeight: FontWeight.w900,
       letterSpacing: 1,
       fontSize: 30,
-      backgroundColor: Colors.brown,
+      backgroundColor: Colors.blueGrey[400],
       fontFamily: "Courgette"
     )
   ).apply(
@@ -106,35 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           children: <Widget>[
             ImagesView(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                 height: 50,
-                width: MediaQuery.of(context).size.width /2,
-                decoration: BoxDecoration(
-                  color: Colors.green[400],
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-                ),
-                child: RaisedButton(
-                  onPressed: (){},
-                  child: Text('Button one',style: TextStyle(color: Colors.red,fontWeight: FontWeight.w900),),
-                ),
-                ),
-                Container(
-                 height: 50,
-                width: MediaQuery.of(context).size.width /2,
-                decoration: BoxDecoration(
-                  color: Colors.blueAccent[400],
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-                ),
-                child: RaisedButton(
-                  onPressed: (){},
-                  child: Text('Button one',style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.w900,fontFamily: "Courgette"),),
-                ),
-                ),
-              ],
-            ),
+            WeatherForecastView(),
             JsonParsing(),
             JsonParsingMap(),
           ],
@@ -172,12 +145,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 class ImagesView extends StatelessWidget {
   final List<Student> student=Student.getStudent();
-
-
-
-
-
-
 List bodyList=[
   'Mostafiz',
   'Mostafiz',
