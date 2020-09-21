@@ -1,3 +1,5 @@
+import 'package:advance_route_getx/app/ui/block_view.dart';
+import 'package:advance_route_getx/app/ui/count_view.dart';
 import 'package:advance_route_getx/app/ui/country_view.dart';
 import 'package:advance_route_getx/app/ui/detail_view.dart';
 import 'package:advance_route_getx/app/ui/home_view.dart';
@@ -25,6 +27,16 @@ class AppPages {
       name: Routes.DETAILS,
       page: () => DetailsView(),
         transition: Transition.cupertino
+    ),
+    GetPage(
+        name: Routes.COUNTS,
+        page: () => CountView(),
+        transition: Transition.zoom
+    ),
+    GetPage(
+        name: Routes.BLOCk,
+        page: () => BlockView(),
+        transition: Transition.zoom
     ),
   ];
 }

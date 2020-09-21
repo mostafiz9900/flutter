@@ -1,11 +1,21 @@
 import 'package:advance_route_getx/app/routes/app_pages.dart';
+import 'package:date_range_form_field/date_range_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   HomeView({Key key}) : super(key: key);
 
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
+DateTimeRange myDateRange;
+void _submitForm() {
+  // final FormState form = myFormKey.currentState;
+  // form.save();
+}
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -85,6 +95,51 @@ class HomeView extends StatelessWidget {
                   // Get.toNamed(Routes.DETAILS);
                 },
               ),
+              RaisedButton(
+                child: Text(' go to count  page'.toUpperCase()),
+                onPressed: (){
+                 Get.toNamed(Routes.COUNTS);
+                  // Get.toNamed(Routes.DETAILS);
+                },
+              ),
+              RaisedButton(
+                child: Text(' go to block  page'.toUpperCase()),
+                onPressed: (){
+                 Get.toNamed(Routes.BLOCk);
+                  // Get.toNamed(Routes.DETAILS);
+                },
+              ),
+              DateRangeField(
+                  context: context,
+                  decoration: InputDecoration(
+                    labelText: 'Date Range',
+                    prefixIcon: Icon(Icons.date_range),
+                    hintText: 'Please select a start and end date',
+                    border: OutlineInputBorder(),
+                  ),
+                  initialValue: DateTimeRange(
+                      start: DateTime.now(), end: DateTime.now()),
+                  validator: (value) {
+                    if (value.start.isBefore(DateTime.now())) {
+                      return 'Please enter a valid date';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    setState(() {
+                      myDateRange = value;
+
+                    });
+                  }),
+              FlatButton(
+                child: Text('Submit'),
+                onPressed:(){
+                  // _submitForm,
+                  print(myDateRange);
+                  print('myDateRange');
+                }
+              ),
+              if(myDateRange != null) Text("Saved value is: ${myDateRange.toString()}")
             ],
           ),
         ),
