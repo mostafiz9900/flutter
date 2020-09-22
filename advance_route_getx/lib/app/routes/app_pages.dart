@@ -1,8 +1,10 @@
+import 'package:advance_route_getx/app/bindings/student_binding.dart';
 import 'package:advance_route_getx/app/ui/block_view.dart';
 import 'package:advance_route_getx/app/ui/count_view.dart';
 import 'package:advance_route_getx/app/ui/country_view.dart';
 import 'package:advance_route_getx/app/ui/detail_view.dart';
 import 'package:advance_route_getx/app/ui/home_view.dart';
+import 'package:advance_route_getx/app/ui/student_view.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';
@@ -14,7 +16,7 @@ class AppPages {
     GetPage(
       name: Routes.HOME,
       page: () => HomeView(),
-      // binding: HomeBinding(),
+      // binding: StudentBinding(),
         transition: Transition.rightToLeft,
 
     ),
@@ -36,6 +38,11 @@ class AppPages {
     GetPage(
         name: Routes.BLOCk,
         page: () => BlockView(),
+        transition: Transition.zoom
+    ),
+    GetPage(
+        name: Routes.STUDENT,
+        page: () => StudentView(),
         transition: Transition.zoom
     ),
   ];

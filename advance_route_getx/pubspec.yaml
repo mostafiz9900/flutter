@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^3.11.1
+  http:
   date_range_form_field: ^0.0.4
 
   # The following adds the Cupertino Icons font to your application.

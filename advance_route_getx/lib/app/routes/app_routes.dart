@@ -6,4 +6,5 @@ abstract class Routes {
   static const DETAILS = '/details';
   static const COUNTS = '/count';
   static const BLOCk = '/block';
+  static const STUDENT = '/student';
 }
