@@ -1,14 +1,17 @@
 import 'dart:ui';
 
+import 'package:advance_route_getx/app/controller/all_country_info_controller.dart';
+import 'package:advance_route_getx/app/data/model/all_country_info.dart';
 import 'package:advance_route_getx/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CountryView extends StatelessWidget {
-  CountryView({Key key}) : super(key: key);
+final AllCountryInfoController appCountryInfo=Get.put(AllCountryInfoController());
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -56,7 +59,8 @@ class CountryView extends StatelessWidget {
                           )
                       );
                     },
-                  )
+                  ),
+
                 ],
               ),
             ),

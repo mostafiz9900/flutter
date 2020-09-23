@@ -7,4 +7,6 @@ abstract class Routes {
   static const COUNTS = '/count';
   static const BLOCk = '/block';
   static const STUDENT = '/student';
+  static const SUM_PAGE = '/sum';
+  static const MAGIC_PAGE = '/magic';
 }

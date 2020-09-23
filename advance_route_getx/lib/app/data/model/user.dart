@@ -3,7 +3,7 @@ class User {
   int id;
   String name;
 
-  User({ this.id, this.name });
+  User({ this.id=0, this.name='' });
 
   // final user = User(id:18,name: "Camila",).obs;
 

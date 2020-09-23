@@ -99,7 +99,7 @@ class AllCountryInfoController extends GetxController {
 
 
 
-  final _obj = ''.obs;
+  final _obj = getCountry.obs;
   set obj(value) => _obj.value = value;
   get obj => _obj.value;
 

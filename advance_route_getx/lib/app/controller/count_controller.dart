@@ -4,6 +4,12 @@ import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
 class CountController extends GetxController {
+ int count=0;
+ void incrementCount(){
+   count++;
+   update();
+ }
+
 
   final count1 = 1.obs;
   final count2 = 0.obs;

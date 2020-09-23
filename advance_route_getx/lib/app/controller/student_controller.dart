@@ -17,7 +17,8 @@ class StudentController extends GetxController {
   set post(value) => this._post.value = value;
 
   getAll(){
-    repository.getAll().then( (data){ this.postList = data; } );
+    repository.getAll().then( (data)
+    { this.postList = data; } );
   }
 /*  final _studentList = List<Student>().obs;
   get studentList => this._studentList;
