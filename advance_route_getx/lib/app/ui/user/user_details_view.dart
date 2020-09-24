@@ -22,6 +22,8 @@ class UserDetailsView extends StatelessWidget {
                   Text('${_.user.firstName ?? ''}'),
                   Text('${_.user.lastName}'),
                   Text('${_.user.email}'),
+
+
                 ],
               ),
             ),

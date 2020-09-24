@@ -270,6 +270,13 @@ class _HomeViewState extends State<HomeView> {
                         // Get.toNamed(Routes.DETAILS);
                       },
                     ),
+                    RaisedButton(
+                      child: Text('product list page'.toUpperCase()),
+                      onPressed: (){
+                        Get.toNamed(Routes.PRODUCT);
+                        // Get.toNamed(Routes.DETAILS);
+                      },
+                    ),
                     DateRangeField(
                         context: context,
                         decoration: InputDecoration(

@@ -6,6 +6,7 @@ import 'package:advance_route_getx/app/ui/country_view.dart';
 import 'package:advance_route_getx/app/ui/detail_view.dart';
 import 'package:advance_route_getx/app/ui/home_view.dart';
 import 'package:advance_route_getx/app/ui/magic_page.dart';
+import 'package:advance_route_getx/app/ui/product_list_view.dart';
 import 'package:advance_route_getx/app/ui/student_view.dart';
 import 'package:advance_route_getx/app/ui/sum_view.dart';
 import 'package:advance_route_getx/app/ui/user/user_details_view.dart';
@@ -77,6 +78,12 @@ class AppPages {
     GetPage(
         name: Routes.USER_DETAILS,
         page: () => UserDetailsView(),
+        transition: Transition.zoom,
+        binding: SampleBinding(),
+    ),
+    GetPage(
+        name: Routes.PRODUCT,
+        page: () => ProductListView(),
         transition: Transition.zoom,
         binding: SampleBinding(),
     ),

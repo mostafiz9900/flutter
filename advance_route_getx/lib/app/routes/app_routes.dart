@@ -11,4 +11,5 @@ abstract class Routes {
   static const MAGIC_PAGE = '/magic';
   static const USER_VIEW = '/user';
   static const USER_DETAILS = '/userDetails';
+  static const PRODUCT = '/product';
 }
