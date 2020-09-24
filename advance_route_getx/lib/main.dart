@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       // logWriterCallback: Logger.write,
       defaultTransition: Transition.zoom,
       translations: MyTranslations(),
-      locale: Locale('pr','BR'),
+      locale: Locale('ar'),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     );

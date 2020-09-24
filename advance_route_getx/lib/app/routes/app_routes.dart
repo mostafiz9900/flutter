@@ -9,4 +9,6 @@ abstract class Routes {
   static const STUDENT = '/student';
   static const SUM_PAGE = '/sum';
   static const MAGIC_PAGE = '/magic';
+  static const USER_VIEW = '/user';
+  static const USER_DETAILS = '/userDetails';
 }

@@ -60,7 +60,7 @@ class CountView extends StatelessWidget {
                 return   Text('Counter ${c.count}');
               }),
 
-          GetX<UserController>(
+        /*  GetX<UserController>(
             init: UserController(),
             builder: (u){
               return Column(
@@ -73,10 +73,10 @@ class CountView extends StatelessWidget {
           ),
           Obx(() =>
           Text("${Get.find<UserController>().user.value.name}")
-          ),
+          ),*/
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+     /* floatingActionButton: FloatingActionButton(
         onPressed: (){
           // Get.find<CountController>().incrementCount();
           Get.find<UserController>().updateUser(3
@@ -85,7 +85,7 @@ class CountView extends StatelessWidget {
           // controller.incrementCount();
         },
 
-      ),
+      ),*/
     );
   }
 }

@@ -84,8 +84,28 @@ class _HomeViewState extends State<HomeView> {
                     },
                   ),
                   ListTile(
-                    title: Text('Item 2'),
-                    onTap: null,
+                    title: Text('english'.tr),
+                    onTap: (){
+                      Get.updateLocale(Locale('en'));
+                    },
+                  ),
+                  ListTile(
+                    title: Text('English Us'),
+                    onTap: (){
+                      Get.updateLocale(Locale('en','US'));
+                    },
+                  ),
+                  ListTile(
+                    title: Text('arabic'.tr),
+                    onTap: (){
+                      Get.updateLocale(Locale('ar'));
+                    },
+                  ),
+                  ListTile(
+                    title: Text('bangla'.tr),
+                    onTap: (){
+                      Get.updateLocale(Locale('bn'));
+                    },
                   ),
                 ],
               ),
@@ -131,6 +151,16 @@ class _HomeViewState extends State<HomeView> {
                       child: Text('update locale en'.toUpperCase()),
                       onPressed: (){
                         Get.updateLocale(Locale('en'));                  },
+                    ),
+                    RaisedButton(
+                      child: Text('update locale ar'.toUpperCase()),
+                      onPressed: (){
+                        Get.updateLocale(Locale('ar'));                  },
+                    ),
+                    RaisedButton(
+                      child: Text('update locale bn'.toUpperCase()),
+                      onPressed: (){
+                        Get.updateLocale(Locale('bn'));                  },
                     ),
                     RaisedButton(
                       child: Text('update us'.toUpperCase()),
@@ -230,6 +260,13 @@ class _HomeViewState extends State<HomeView> {
                       child: Text(' go to Summm  page'.toUpperCase()),
                       onPressed: (){
                         Get.toNamed(Routes.SUM_PAGE);
+                        // Get.toNamed(Routes.DETAILS);
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text('user list page'.toUpperCase()),
+                      onPressed: (){
+                        Get.toNamed(Routes.USER_VIEW);
                         // Get.toNamed(Routes.DETAILS);
                       },
                     ),

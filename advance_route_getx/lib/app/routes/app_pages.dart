@@ -8,6 +8,8 @@ import 'package:advance_route_getx/app/ui/home_view.dart';
 import 'package:advance_route_getx/app/ui/magic_page.dart';
 import 'package:advance_route_getx/app/ui/student_view.dart';
 import 'package:advance_route_getx/app/ui/sum_view.dart';
+import 'package:advance_route_getx/app/ui/user/user_details_view.dart';
+import 'package:advance_route_getx/app/ui/user/user_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -63,6 +65,20 @@ class AppPages {
         binding: SampleBinding(),
 
 
+    ),
+    GetPage(
+        name: Routes.USER_VIEW,
+        page: () => UserView(),
+        transition: Transition.rightToLeft,
+        binding: SampleBinding(),
+
+
+    ),
+    GetPage(
+        name: Routes.USER_DETAILS,
+        page: () => UserDetailsView(),
+        transition: Transition.zoom,
+        binding: SampleBinding(),
     ),
   ];
 }
