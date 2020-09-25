@@ -14,7 +14,10 @@ class GlobalController extends GetxController {
   }
 
   List<Product> _productList=[];
+
+ Map<String,Product> _favorite=Map();
   List<Product> get productList=> _productList;
+  Map<String,Product> get favorite=>_favorite;
 
  Future<void> loadProduct()async{
    final String productList=await rootBundle.loadString('assets/product.json');
@@ -22,5 +25,15 @@ class GlobalController extends GetxController {
    this._productList=(jsonDecode(productList) as List).map((e) => Product.fromJson(e)).toList();
    print('global  products');
    update(['products']);
+  }
+  onFavorite(int index, bool isFavorites){
+   Product product=_productList[index];
+   product.isFavorite=isFavorites;
+   if(isFavorites){
+     this._favorite[product.name]=product;
+   }else{
+     this._favorite.remove(product.name);
+   }
+   update(['products','favorites']);
   }
 }

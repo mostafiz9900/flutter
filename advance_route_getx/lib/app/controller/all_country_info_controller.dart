@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:advance_route_getx/app/data/model/all_country_info.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
 class AllCountryInfoController extends GetxController {
+  List<AllCountryInfo> _allCountryInfoList=[];
+  List<AllCountryInfo> get countryList => _allCountryInfoList;
 
-
-  static List<AllCountryInfo> getCountry()=>[
+ /* static List<AllCountryInfo> getCountry()=>[
     AllCountryInfo(
         name: "Colombia",
         topLevelDomain: [
@@ -44,64 +48,30 @@ class AllCountryInfoController extends GetxController {
         ],
         nativeName: "Colombia",
         numericCode: "170",
-        /* currencies: [
-                code: "COP",
-                name: "Colombian peso",
-                symbol: "$"
-            ],*/
-        /*languages: [
 
-                iso639_1: "es",
-                iso639_2: "spa",
-                name: "Spanish",
-                nativeName: "Español"
 
-            ],*/
-        // translations: {
-        //   de: "Kolumbien",
-        //   es: "Colombia",
-        //   fr: "Colombie",
-        //   ja: "コロンビア",
-        //   it: "Colombia",
-        //   br: "Colômbia",
-        //   pt: "Colômbia"
-        // },
         flag: "https://restcountries.eu/data/col.svg",
-        /* regionalBlocs: [
 
-                acronym: "PA",
-                "name": "Pacific Alliance",
-                "otherAcronyms": [],
-                "otherNames": [
-                  "Alianza del Pacífico"
-                ]
-              ,
-              {
-                "acronym": "USAN",
-                "name": "Union of South American Nations",
-                "otherAcronyms": [
-                  "UNASUR",
-                  "UNASUL",
-                  "UZAN"
-                ],
-                otherNames: [
-                  "Unión de Naciones Suramericanas",
-                  "União de Nações Sul-Americanas",
-                  "Unie van Zuid-Amerikaanse Naties",
-                  "South American Union"
-                ]
-              }
-            ],*/
         cioc: "COL"
 
     )
   ];
+*/
+
+@override
+  void onInit() {
+    super.onInit();
+    loadCountry();
+  }
 
 
+ Future<void> loadCountry()async{
+   final String countrys=await rootBundle.loadString('assets/country.json');
 
-  final _obj = getCountry.obs;
-  set obj(value) => _obj.value = value;
-  get obj => _obj.value;
+   this._allCountryInfoList = (jsonDecode(countrys) as List).map((e) => AllCountryInfo.fromJson(e)).toList();
+   update(['countrys']);
+  }
+
 
 
 

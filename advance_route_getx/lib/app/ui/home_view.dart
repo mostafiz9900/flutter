@@ -1,3 +1,4 @@
+import 'package:advance_route_getx/app/controller/global_controller.dart';
 import 'package:advance_route_getx/app/controller/home_controller.dart';
 import 'package:advance_route_getx/app/routes/app_pages.dart';
 import 'package:date_range_form_field/date_range_form_field.dart';
@@ -42,7 +43,18 @@ class _HomeViewState extends State<HomeView> {
               backgroundColor: Colors.white10,
               elevation: 4,
               centerTitle: true,
-
+              actions: [
+              GetBuilder<GlobalController>(
+                id:'favorites',
+                init: GlobalController(),
+                builder: (_){
+                  return FlatButton(
+                      child: Text('Favorite (${_.favorite.length})'),
+                      onPressed: null
+                  );
+                },
+              )
+              ],
             ),
             drawer: GFDrawer(
 
@@ -274,6 +286,20 @@ class _HomeViewState extends State<HomeView> {
                       child: Text('product list page'.toUpperCase()),
                       onPressed: (){
                         Get.toNamed(Routes.PRODUCT);
+                        // Get.toNamed(Routes.DETAILS);
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text('country list page'.toUpperCase()),
+                      onPressed: (){
+                        Get.toNamed(Routes.ALL_COUNTRY);
+                        // Get.toNamed(Routes.DETAILS);
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text('reactive page'.toUpperCase()),
+                      onPressed: (){
+                        Get.toNamed(Routes.REACTIVE);
                         // Get.toNamed(Routes.DETAILS);
                       },
                     ),

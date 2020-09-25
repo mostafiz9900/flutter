@@ -52,7 +52,18 @@ class AllCountryInfo {
         this.regionalBlocs,
         this.cioc});
 
-  AllCountryInfo.fromJson(Map<String, dynamic> json) {
+  static AllCountryInfo fromJson(Map<String,dynamic> json){
+    return AllCountryInfo(
+      name: json['name'],
+      capital: json['capital'],
+      region: json['region'],
+      subregion: json['subregion'],
+      flag: json['flag'],
+    );
+
+  }
+
+ /* AllCountryInfo.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     topLevelDomain = json['topLevelDomain'].cast<String>();
     alpha2Code = json['alpha2Code'];
@@ -94,7 +105,7 @@ class AllCountryInfo {
       });
     }
     cioc = json['cioc'];
-  }
+  }*/
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

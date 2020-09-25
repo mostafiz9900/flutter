@@ -1,5 +1,6 @@
 import 'package:advance_route_getx/app/bindings/sample_binding.dart';
 import 'package:advance_route_getx/app/bindings/student_binding.dart';
+import 'package:advance_route_getx/app/ui/all_country_info__view.dart';
 import 'package:advance_route_getx/app/ui/block_view.dart';
 import 'package:advance_route_getx/app/ui/count_view.dart';
 import 'package:advance_route_getx/app/ui/country_view.dart';
@@ -7,6 +8,7 @@ import 'package:advance_route_getx/app/ui/detail_view.dart';
 import 'package:advance_route_getx/app/ui/home_view.dart';
 import 'package:advance_route_getx/app/ui/magic_page.dart';
 import 'package:advance_route_getx/app/ui/product_list_view.dart';
+import 'package:advance_route_getx/app/ui/reactive_view.dart';
 import 'package:advance_route_getx/app/ui/student_view.dart';
 import 'package:advance_route_getx/app/ui/sum_view.dart';
 import 'package:advance_route_getx/app/ui/user/user_details_view.dart';
@@ -86,6 +88,18 @@ class AppPages {
         page: () => ProductListView(),
         transition: Transition.zoom,
         binding: SampleBinding(),
+    ),
+    GetPage(
+        name: Routes.ALL_COUNTRY,
+        page: () => AllCountryInfoView(),
+        transition: Transition.rightToLeft,
+        // binding: SampleBinding(),
+    ),
+    GetPage(
+        name: Routes.REACTIVE,
+        page: () => ReactiveView(),
+        transition: Transition.rightToLeft,
+        // binding: SampleBinding(),
     ),
   ];
 }

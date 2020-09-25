@@ -12,4 +12,6 @@ abstract class Routes {
   static const USER_VIEW = '/user';
   static const USER_DETAILS = '/userDetails';
   static const PRODUCT = '/product';
+  static const ALL_COUNTRY = '/allCountry';
+  static const REACTIVE = '/reactive';
 }

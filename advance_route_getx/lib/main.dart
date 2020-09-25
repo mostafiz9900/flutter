@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(GlobalController());
     return GetMaterialApp(
+
       debugShowCheckedModeBanner: false,
       enableLog: true,
       // logWriterCallback: Logger.write,
