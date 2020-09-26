@@ -11,11 +11,7 @@ class TestPage extends StatelessWidget {
         appBar: AppBar(title: Text('My Page')),
         body: Container(
           child: Center(
-            child: FlatButton(
-                onPressed: () {
-                  _.printMessage();
-                },
-                child: Text('print message')),
+            child:CircularProgressIndicator(),
           ),
         ),
       ),
