@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_pattern/app/modules/test/test_binding.dart';
 import 'package:flutter_getx_pattern/app/modules/test/test_page.dart';
 import 'package:flutter_getx_pattern/app/routes/app_pages.dart';
-import 'package:get/route_manager.dart';
+import 'package:flutter_getx_pattern/app/utils/dependency_injection.dart';
+import 'package:get/get.dart';
 
 void main() {
+  DependencyInjection.init();
   runApp(MyApp());
 }
 

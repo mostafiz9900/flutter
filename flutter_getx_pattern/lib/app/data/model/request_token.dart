@@ -12,10 +12,10 @@ class RequestToken {
   final String expiresAt;
   final String requestToken;
 
-  factory RequestToken.fromRawJson(String str) => RequestToken.fromJson(json.decode(str));
+ /* factory RequestToken.fromRawJson(String str) => RequestToken.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
-
+*/
   factory RequestToken.fromJson(Map<String, dynamic> json) => RequestToken(
     success: json["success"],
     expiresAt: json["expires_at"],

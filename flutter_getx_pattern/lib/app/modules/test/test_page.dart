@@ -6,9 +6,9 @@ class TestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<TestController>(
-      init: TestController(),
+      // init: TestController(),
       builder: (_) => Scaffold(
-        appBar: AppBar(title: Text('My Page')),
+        appBar: AppBar(title: Text('Test Page')),
         body: Container(
           child: Center(
             child:CircularProgressIndicator(),
