@@ -25,7 +25,8 @@ void changeUserName(String text){
        userName: _userName,
        password: _password,
        requestToken: requestToken.requestToken);
-  print('login ok');
+
+  print('login ok ${authRequestToken.requestToken}');
  }catch(e){
    print(e);
    String message = "";

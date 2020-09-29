@@ -18,6 +18,7 @@ import 'package:get/get.dart';
 class DependencyInjection{
   
  static void init(){
+    // Get.lazyPut<Dio>(() => Dio(BaseOptions(baseUrl: 'https://api.themoviedb.org/3/movie/550')));
     Get.lazyPut<Dio>(() => Dio(BaseOptions(baseUrl: 'https://api.themoviedb.org/3')));
 
     Get.lazyPut<AuthenticationAPI>(() => AuthenticationAPI());
