@@ -6,10 +6,11 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DetailsController>(
-      builder: (_)=>Scaffold(
+      init: DetailsController(),
+      builder: (_) => Scaffold(
         appBar: AppBar(title: Text('My Page')),
         body: Container(
-
+          child: Text("movie list page: ${_.movieList.length}"),
         ),
       ),
     );

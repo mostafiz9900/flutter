@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_getx_pattern/app/modules/home/home_controller.dart';
+import 'package:flutter_getx_pattern/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,14 @@ class HomePage extends StatelessWidget {
                     onPressed: _.submitData,
                     child: Text('Send',style: TextStyle(color: Colors.white),),
                 color: Colors.black,
-                )
+                ),
+                FlatButton(
+                    onPressed:() {
+                      Get.toNamed(AppRoutes.DETAILS);
+                    },
+                    child: Text('Movie list',style: TextStyle(color: Colors.white),),
+                color: Colors.black,
+                ),
               ],
             ),
           ),
