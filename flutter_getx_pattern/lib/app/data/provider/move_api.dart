@@ -12,8 +12,9 @@ class MoveApi {
       final Response response = await _dio.get('/movie/top_rated',
           queryParameters: {
             "api_key": Constants.THE_MOVIE_DB_API_KEY,
-            "language": "es"
+            "language": "en-US"
           });
+      print(response);
      return (response.data["results"] as List).map((e) => Movie.fromJson(e)).toList();
 
     } catch (_) {

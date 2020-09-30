@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_pattern/app/data/model/request_token.dart';
 import 'package:flutter_getx_pattern/app/data/repository/authentication_repository.dart';
+import 'package:flutter_getx_pattern/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
@@ -27,6 +28,7 @@ void changeUserName(String text){
        requestToken: requestToken.requestToken);
 
   print('login ok ${authRequestToken.requestToken}');
+  Get.offNamed(AppRoutes.DETAILS);
  }catch(e){
    print(e);
    String message = "";

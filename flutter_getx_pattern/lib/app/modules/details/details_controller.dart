@@ -25,4 +25,8 @@ class DetailsController extends GetxController {
       print(e);
     }
   }
+  Future<void> logOut() async {
+    /*await _localAuthRepository.clearSession();
+    Get.offNamedUntil(AppRoutes.LOGIN, (_) => false);*/
+  }
 }

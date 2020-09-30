@@ -22,7 +22,7 @@ class DependencyInjection{
   
  static void init(){
     // Get.lazyPut<Dio>(() => Dio(BaseOptions(baseUrl: 'https://api.themoviedb.org/3/movie/550')));
-    Get.put<Dio>(Dio(BaseOptions(baseUrl: 'https://api.themoviedb.org/3')));
+    Get.put<Dio>(Dio(BaseOptions(baseUrl:'https://api.themoviedb.org/3')));
 
     //provider
     Get.put<AuthenticationAPI>(AuthenticationAPI());
