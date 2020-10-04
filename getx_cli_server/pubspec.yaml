@@ -1,0 +1,13 @@
+name: getx_cli_server
+description: A new Get Server application.
+version: 1.0.0
+
+environment:
+  sdk: '>=2.4.0 <3.0.0'
+
+dependencies:
+  get_server: 0.6.5
+
+dev_dependencies:
+  test: 1.15.4
+  pedantic: 1.9.2
