@@ -83,6 +83,13 @@ class _HomeViewState extends State<HomeView> {
               });
             },
           ),
+          RaisedButton.icon(
+              onPressed: () {
+                Get.changeTheme(Get.isDarkMode? ThemeData.light():ThemeData.dark());
+                // Get.changeTheme(Get.isDarkMode? ThemeData.light(): ThemeData.dark());
+              },
+              icon: Icon(Icons.threed_rotation),
+              label: Text('Theme change')),
         ],
       ),
     );
