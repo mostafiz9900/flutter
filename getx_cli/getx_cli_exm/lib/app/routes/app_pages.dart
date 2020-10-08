@@ -1,3 +1,5 @@
+import 'package:getx_cli_exm/app/modules/web_video_pla/web_video_pla_view.dart';
+import 'package:getx_cli_exm/app/modules/web_video_pla/web_video_pla_binding.dart';
 import 'package:getx_cli_exm/app/modules/login/login_view.dart';
 import 'package:getx_cli_exm/app/modules/login/login_binding.dart';
 import 'package:getx_cli_exm/app/modules/home/home_view.dart';
@@ -19,6 +21,11 @@ static const INITIAL = Routes.HOME;
       name: Routes.LOGIN, 
       page:()=> LoginView(), 
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: Routes.WEB_VIDEO_PLA, 
+      page:()=> WebVideoPlaView(), 
+      binding: WebVideoPlaBinding(),
     ),
   ];
 }

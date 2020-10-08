@@ -32,6 +32,12 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           Center(
+            child: RaisedButton(
+                onPressed: () => Get.toNamed(Routes.WEB_VIDEO_PLA),
+              child: Text('video player page'),
+            ),
+          ),
+          Center(
             child: Text(
               'System Brightness: ${Get.mediaQuery.platformBrightness.toString()}',
               style: TextStyle(fontSize: 20),
