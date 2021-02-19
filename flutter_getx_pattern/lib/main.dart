@@ -13,16 +13,18 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: TestPage(),
-      initialBinding: TestBinding(),
-      getPages: AppPages.pages,
-    );
+    return SimpleBuilder(builder: (_){
+      return GetMaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: TestPage(),
+        initialBinding: TestBinding(),
+        getPages: AppPages.pages,
+      );
+    });
   }
 }

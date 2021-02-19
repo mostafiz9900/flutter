@@ -23,6 +23,8 @@ environment:
 dependencies:
   get: 3.12.1
   video_player: ^0.10.5
+  date_range_form_field: ^0.0.4
+  mapbox_search_flutter: ^1.0.6+1
   flutter:
     sdk: flutter
 

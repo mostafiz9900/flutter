@@ -1,8 +1,10 @@
+import 'package:date_range_form_field/date_range_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; 
 import 'package:getx_cli_exm/app/modules/home/home_controller.dart';
 import 'package:getx_cli_exm/app/routes/app_pages.dart';
-
+import 'package:mapbox_search_flutter/mapbox_search_flutter.dart';
+String apiKey = "AIzaSyAjp5OfeOhMfejWHUjy0TVtdwhTlc_NYxs";
 class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();
@@ -16,6 +18,20 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: Text('HomeView'),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SearchPage(),
+                ),
+              );
+            },
+          )
+
+        ],
       ),
       body: Column(
         children: [
@@ -96,9 +112,52 @@ class _HomeViewState extends State<HomeView> {
               },
               icon: Icon(Icons.threed_rotation),
               label: Text('Theme change')),
+          SafeArea(
+            child: DateRangeField(
+                context: context,
+                decoration: InputDecoration(
+                  labelText: 'Date Range',
+                  prefixIcon: Icon(Icons.date_range),
+                  hintText: 'Please select a start and end date',
+                  border: OutlineInputBorder(),
+                ),
+                initialValue: DateTimeRange(
+                    start: DateTime.now(), end: DateTime.now()),
+                validator: (value) {
+                  if (value.start.isBefore(DateTime.now())) {
+                    return 'Please enter a valid date';
+                  }
+                  return null;
+                },
+              ),
+          ),
         ],
       ),
     );
   }
 }
-  
+class SearchPage extends StatelessWidget {
+  const SearchPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_back_ios),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      body: SafeArea(
+        bottom: false,
+        child: MapBoxPlaceSearchWidget(
+          popOnSelect: true,
+          apiKey: apiKey,
+          searchHint: 'Search around',
+          onSelected: (place) {},
+          context: context,
+        ),
+      ),
+    );
+  }
+}
