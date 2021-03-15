@@ -7,11 +7,14 @@ import 'package:getx_apps2/app/config/theme/themes.dart' as themesData;
 import 'package:getx_apps2/app/config/theme/theme_service.dart';
 
 
+
 import 'app/routes/app_pages.dart';
 import 'app/utils/themes.dart';
 import 'generated/locales.g.dart';
 
 void main()async {
+
+
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(

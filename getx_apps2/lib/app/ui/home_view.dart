@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:getx_apps2/app/controllers/change_theme_controller.dart';
+import 'package:getx_apps2/app/controllers/todo_controller.dart';
 import 'package:getx_apps2/app/routes/app_pages.dart';
 import 'package:getx_apps2/app/utils/constants.dart';
 
 import '../controllers/home_controller.dart';
 
 class HomeView extends StatelessWidget {
-
+  final TodoController _controller = Get.put(TodoController());
   // final ChangeThemeController _changeThemeController = Get.find();
   @override
   Widget build(BuildContext context) {
+    print(_controller.todoList.length);
+    print('_controller.todoList.length');
     return Scaffold(
       backgroundColor: context.theme.backgroundColor,
       appBar: AppBar(
@@ -107,8 +110,6 @@ class HomeView extends StatelessWidget {
             ),
             ListTile(
               title: Text('arabic'.tr),
-
-
               onTap: () {
                 var locale = Locale('ar', 'SA');
                 Get.updateLocale(locale);
@@ -119,14 +120,29 @@ class HomeView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          RaisedButton(
-            color: Colors.blue,
+          ElevatedButton(
+
             onPressed: () {
               Get.toNamed(Routes.DETAILS);
             },
-            splashColor: Colors.blueGrey,
+
             child: Text(
               'OK',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
+
+          ElevatedButton(
+            onPressed: () {
+              Get.toNamed(Routes.TODO);
+            },
+
+            child: Text(
+              'todo',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,

@@ -21,10 +21,12 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  get: 3.25.4
+  get: ^3.26.0
   getwidget: ^1.2.4
   get_storage: ^1.4.0
   google_fonts:
+  http: ^0.12.2
+
   flutter:
     sdk: flutter
 
@@ -53,6 +55,7 @@ flutter:
     - assets/images/uk.jpg
     - assets/images/it.jpg
     - assets/images/ar.png
+    - assets/pdf_file/al_quran_word.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -9,6 +9,7 @@ class HomeController extends GetxController {
   ThemeData get theme => isDark ? ThemeData.dark() : ThemeData.light();
   void changeTheme(bool val) => box.write('darkmode', val);
   final count = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
