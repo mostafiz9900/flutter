@@ -12,7 +12,7 @@ final Dio _dio=Get.find<Dio>();
 // AuthenticationAPI(this._dio);
 
 Future<RequestToken> newRequestToken()async{
-final Response response= await _dio.get(
+final response= await _dio.get(
     '/authentication/token/new',
   queryParameters: {
     'api_key':Constants.THE_MOVIE_DB_API_KEY
@@ -26,7 +26,7 @@ Future<RequestToken> validateWithLogin({
   @required String password,
   @required String requestToken
 })async{
-final Response response= await _dio.post(
+final response= await _dio.post(
     '/authentication/token/validate_with_login',
   queryParameters: {
     'api_key':Constants.THE_MOVIE_DB_API_KEY

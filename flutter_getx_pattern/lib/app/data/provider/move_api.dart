@@ -9,7 +9,7 @@ class MoveApi {
 
   Future<List<Movie>> getTopMoves() async {
     try {
-      final Response response = await _dio.get('/movie/top_rated',
+      final response = await _dio.get('/movie/top_rated',
           queryParameters: {
             "api_key": Constants.THE_MOVIE_DB_API_KEY,
             "language": "en-US"

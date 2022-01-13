@@ -14,6 +14,7 @@ class HomeController extends GetxController {
 
 void changeUserName(String text){
   this._userName=text;
+ 
 }
  void changePassword(String text){
    this._password=text;

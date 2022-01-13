@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
+  
       init: HomeController(),
       builder: (_) => Container(
         width: Get.width,
@@ -55,6 +56,7 @@ class HomePage extends StatelessWidget {
                       child: Text('Movie list',style: TextStyle(color: Colors.white),),
                   color: Colors.black,
                   ),
+
                 ],
               ),
             ),

@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:getx_apps2/app/controllers/change_theme_controller.dart';
 import 'package:getx_apps2/app/controllers/todo_controller.dart';
 import 'package:getx_apps2/app/routes/app_pages.dart';
 import 'package:getx_apps2/app/utils/constants.dart';
+import 'package:native_pdf_view/native_pdf_view.dart';
 
 import '../controllers/home_controller.dart';
 
 class HomeView extends StatelessWidget {
   final TodoController _controller = Get.put(TodoController());
+  final HomeController _cont = Get.put(HomeController());
   // final ChangeThemeController _changeThemeController = Get.find();
+
+  getFileToAsset(String filePath)async{
+    // Load from assets
+/*    try{
+var data=await rootBundle.load(filePath);
+var byte=data.buffer.asUint8List();
+var dir=await getApplicationDocumentsDirectory();
+    }catch(error){
+
+    }*/
+  }
+
+
   @override
   Widget build(BuildContext context) {
     print(_controller.todoList.length);
@@ -155,6 +172,27 @@ class HomeView extends StatelessWidget {
               style: TextStyle(fontSize: 20),
             ),
           ),
+          GetBuilder<HomeController>(
+              // init: HomeController(),
+              builder: (_con){
+                return PdfView(
+                  documentLoader: Center(child: CircularProgressIndicator()),
+                  pageLoader: Center(child: CircularProgressIndicator()),
+                  controller: _con.pdfController,
+                  onDocumentLoaded: (document) {
+
+                      _con.allPagesCount = document.pagesCount;
+
+                  },
+                  onPageChanged: (page) {
+
+                      _con.actualPageNumber = page;
+
+                  },
+                );
+
+              }),
+
         ],
       ),
     );

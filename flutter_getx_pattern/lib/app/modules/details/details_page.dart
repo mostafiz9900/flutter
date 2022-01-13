@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_pattern/app/data/model/movie.dart';
 import 'package:flutter_getx_pattern/app/modules/details/details_controller.dart';
+import 'package:flutter_getx_pattern/app/routes/app_routes.dart';
 import 'package:flutter_getx_pattern/app/utils/constants.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,12 @@ class DetailsPage extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: _.logOut,
-            )
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed(AppRoutes.PHONE_NUMBER);
+                },
+                child: Text('Phone Number Page'))
           ],
         ),
         body: Container(

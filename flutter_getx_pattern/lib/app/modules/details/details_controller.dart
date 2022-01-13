@@ -2,7 +2,7 @@ import 'package:flutter_getx_pattern/app/data/model/movie.dart';
 import 'package:flutter_getx_pattern/app/data/repository/move_repository.dart';
 import 'package:get/get.dart';
 
-class DetailsController extends GetxController {
+class DetailsController extends GetxController with StateMixin<List<Movie>> {
   final MoveRepository _moveRepository = Get.find<MoveRepository>();
 
   List<Movie> _list = [];
@@ -30,3 +30,5 @@ class DetailsController extends GetxController {
     Get.offNamedUntil(AppRoutes.LOGIN, (_) => false);*/
   }
 }
+
+

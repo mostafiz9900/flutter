@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SimpleBuilder(builder: (_){
       return GetMaterialApp(
+        // smartManagement: SmartManagement.keepFactory,
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
